@@ -7,4 +7,3 @@ defined_names.sort()
 
 for name in defined_names:
     print(name)
-
