@@ -6,7 +6,7 @@ if __name__ == "__main__":
     if len(a) != 3:
         print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
         exit(1)
-    
+
     c = int(a[0])
     operator = a[1]
     d = int(a[2])
