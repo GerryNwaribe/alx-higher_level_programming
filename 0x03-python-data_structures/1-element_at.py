@@ -7,4 +7,4 @@ def element_at(my_list, idx):
         elif idx > b:
             return None
         else:
-            return idx + 1
+            return my_list[idx]
