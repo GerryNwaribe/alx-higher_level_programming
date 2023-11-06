@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
-    
-        b = len(my_list) - 1
+    if isinstance(my_list, list):
+        b = len(my_list)
         cp_my_list = my_list[:]
 
         if idx < 0:
