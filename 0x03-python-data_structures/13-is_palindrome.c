@@ -13,6 +13,11 @@ int is_palindrome(listint_t **head)
 	listint_t *temp_ptr2 = NULL;
 	listint_t *second_half_start = NULL;
 
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return (1);
+	}
+
 	while (fast_point != NULL && fast_point->next != NULL)
 	{
 		slow_point = slow_point->next;
