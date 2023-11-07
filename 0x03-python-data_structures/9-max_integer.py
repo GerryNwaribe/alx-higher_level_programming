@@ -9,4 +9,6 @@ def max_integer(my_list=[]):
         if a > biggest:
             biggest = a
         else:
-            return max(my_list)
+            biggest
+
+        return max(my_list)
