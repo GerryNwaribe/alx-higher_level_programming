@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Defining class Square
     Attribute:
-    size(int): size of square (Private instance attribute)
-    Returns 0 if not soecified"""
+        size(int): size of square (Private instance attribute)
+    Returns 0 if not specified"""
 
 
 class Square:
