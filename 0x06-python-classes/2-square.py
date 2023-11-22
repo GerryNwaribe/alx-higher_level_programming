@@ -12,8 +12,8 @@ class Square:
             size(int): size of square (Private instance attribute)
         Returns 0 if no size
         Raises:
-            TypeError: if size is not an integer
-            ValueError: If size is less than 0
+            TypeError: size must be an integer
+            ValueError: size must be >= 0
         """
 
         if not isinstance(size, int):
