@@ -10,7 +10,7 @@ class Square:
         """Initialize square of any size
             Attribute:
                 size(int): size of square (Private instance attribute)
-            Returns 0 if no size
+                Returns 0 if no size
             Raises:
                 TypeError: size must be an integer
                 ValueError: size must be >= 0
