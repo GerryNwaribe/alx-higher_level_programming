@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Defining class Square
-    Attribute:
-        size(int): size of square (Private instance attribute)
-    Returns 0 if not specified"""
+"""Defining class Square"""
 
 
 class Square:
+    """Attribute:
+        size(int): size of square (Private instance attribute)
+        Returns 0 if not specified"""
+
     def __init__(self, size=0):
         """Initialize square of any size
             Attribute:
