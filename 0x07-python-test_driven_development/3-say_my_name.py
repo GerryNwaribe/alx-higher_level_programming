@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""define function to print name"""
+
+
 def say_my_name(first_name, last_name=""):
-    """_summary_
+    """say_my_name
 
     Args:
         first_name (str): first name of person
