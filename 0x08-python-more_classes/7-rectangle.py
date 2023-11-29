@@ -8,8 +8,9 @@ class Rectangle:
         when a rectangle is deleted
     """
     number_of_instances = 0
+    print_symbol = "#"
 
-    def __init__(self, width=0, height=0, print_symbol='#'):
+    def __init__(self, width=0, height=0):
         """_summary_
 
         Args:
@@ -20,7 +21,6 @@ class Rectangle:
         self.height = height
         self.width = width
         Rectangle.number_of_instances += 1
-        self.print_symbol = print_symbol
 
     @property
     def height(self):
@@ -80,22 +80,17 @@ class Rectangle:
         else:
             return result
 
-    def my_print(self):
-        """function to print square with # char"""
-        if self.__width == 0 or self.__height == 0:
-            print()
-        else:
-            for a in range(self.__height):
-                print('#' * self.__width)
-
     def __str__(self):
         """Return a string representation of the rectangle."""
+        list_var = []
         if self.__width == 0 or self.__height == 0:
-            return []
-        if isinstance(self.print_symbol, list):
-            return [[''.join(map(str, self.print_symbol)) * self.width] for _ in range(self.height)]
-        else:
-            return [[str(self.print_symbol) * self.width] for _ in range(self.height)]
+            return list_var
+        for a in range(self.__height):
+            for b in range(self.__width):
+                list_var.append(str(self.print_symbol))
+            if a != self.__height-1:
+                list_var.append('\n')
+        return "".join(list_var)
 
     def __repr__(self):
         """Return a string representation of the object that
