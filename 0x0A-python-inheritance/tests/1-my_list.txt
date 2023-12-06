@@ -22,6 +22,11 @@
 >>> list_3.print_sorted()
 []
 
+>>> val = [5, 6, 7, 8, 9]
+>>> list_6 = MyList(val)
+>>> list_6.print_sorted()
+[5, 6, 7, 8, 9]
+
 >>> list_4.print_sorted(1)
 Traceback (most recent call last):
 ...
