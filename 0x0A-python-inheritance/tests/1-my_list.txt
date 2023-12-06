@@ -9,6 +9,9 @@
 >>> list_2.print_sorted()
 [-1, 0, 5, 9]
 
+>>> print(list_2)
+[-1, 5, 9, 0]
+
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
