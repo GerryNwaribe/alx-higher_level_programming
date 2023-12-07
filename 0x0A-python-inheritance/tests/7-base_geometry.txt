@@ -55,6 +55,9 @@ TypeError: my_int must be an integer
 
 >>> bg.integer_validator("my_int", True)
 
+>>> bg.integer_validator(4, True)
+
+
 >>> bg.integer_validator("my_int", {3, 4})
 Traceback (most recent call last):
 ...
