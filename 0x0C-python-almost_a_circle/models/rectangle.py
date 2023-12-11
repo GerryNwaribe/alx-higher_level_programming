@@ -99,3 +99,9 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("id must be > 0")
         self.__id = value
+
+    def __str__(self):
+        return (
+                "[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.x, self.y, self.width, self.height)
+                )
