@@ -21,21 +21,19 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        self.id = id
 
     @property
     def width(self):
         """Getter method for width."""
         return self.__width
 
-    width.setter
-
+    @width.setter
     def width(self, value):
         """Setter method for width."""
-        if self.__width <= 0:
-            raise ValueError("width must be > 0")
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -43,14 +41,13 @@ class Rectangle(Base):
         """Getter method for height."""
         return self.__height
 
-    height.setter
-
+    @height.setter
     def height(self, value):
         """Setter method for height."""
-        if self.__height <= 0:
-            raise ValueError("height must be > 0")
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -58,11 +55,10 @@ class Rectangle(Base):
         """Getter method for x."""
         return self.__x
 
-    x.setter
-
+    @x.setter
     def x(self, value):
         """Setter method for x."""
-        if self.__x <= 0:
+        if value < 0:
             raise ValueError("x must be > 0")
         self.__x = value
 
@@ -71,11 +67,10 @@ class Rectangle(Base):
         """Getter method for x."""
         return self.__y
 
-    y.setter
-
+    @y.setter
     def y(self, value):
         """Getter method for y."""
-        if self.__y <= 0:
+        if value < 0:
             raise ValueError("y must be > 0")
         self.__y = value
 
@@ -84,10 +79,9 @@ class Rectangle(Base):
         """Getter method for id."""
         return self.__id
 
-    id.setter
-
+    @id.setter
     def id(self, value):
         """Setter method for id."""
-        if self.__id <= 0:
+        if value < 0:
             raise ValueError("id must be > 0")
         self.__id = value
