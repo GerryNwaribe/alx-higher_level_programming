@@ -29,7 +29,11 @@ class Rectangle(Base):
     def display(self):
         """prints in stdout the Rectangle
         instance with the character #"""
+        for b in range(self.y):
+            print()
+
         for a in range(self.__height):
+            print(" " * self.x, end='')
             print('#' * self.__width)
 
     @property
