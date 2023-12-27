@@ -26,7 +26,7 @@ def matrix_divided(matrix, divisor):
     if any(len(row) != num_columns for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
     if type(divisor) not in (int, float):
-        raise TypeError("divisor must be a number")
+        raise TypeError("div must be a number")
     if divisor == 0:
         raise ZeroDivisionError("division by zero")
 
