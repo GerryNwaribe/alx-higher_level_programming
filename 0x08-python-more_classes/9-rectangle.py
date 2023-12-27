@@ -18,30 +18,9 @@ class Rectangle:
             height (int, optional): _description_. Defaults to 0.
             print_symbol - prints #
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
-
-    @property
-    def height(self):
-        """_summary_
-        Returns height
-        """
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """_summary_
-
-        Args:
-            value (int): value of size
-        """
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
 
     @property
     def width(self):
@@ -63,6 +42,27 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
+    @property
+    def height(self):
+        """_summary_
+        Returns height
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """_summary_
+
+        Args:
+            value (int): value of size
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
+        else:
+            self.__height = value
 
     def area(self):
         """_summary_
@@ -131,4 +131,12 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """returns a new Rectangle instance with width == height == size
+
+        Args:
+            size (int, optional): size of rectangle
+
+        Returns:
+            instance of rectangle
+        """
         return cls(size, size)
