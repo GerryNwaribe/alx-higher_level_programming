@@ -115,6 +115,16 @@ class Rectangle(Base):
             raise ValueError("id must be > 0")
         self.__id = value
 
+    def to_dictionary(self):
+        """define function
+
+        Returns:
+            returns the dictionary representation of a Rectangle
+        """
+        diction = {"id": self.id, "width": self.width,
+                   "height": self.height, "x": self.x, "y": self.y}
+        return diction
+
     def __str__(self):
         return (
                 "[Rectangle] ({}) {}/{} - {}/{}"

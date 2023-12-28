@@ -51,7 +51,7 @@ class Square(Rectangle):
                     self.x = value
                 elif key == 'y':
                     self.y = value
-
+        
     def __str__(self):
         """overloading __str__ method
 
