@@ -58,8 +58,7 @@ class Square(Rectangle):
         Returns:
             returns the dictionary representation of a Rectangle
         """
-        return {"id": self.id, "width": self.width,
-                "height": self.height, "x": self.x, "y": self.y}
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
 
     def __str__(self):
         """overloading __str__ method
