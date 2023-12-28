@@ -28,6 +28,10 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """*args is the list of arguments - no-keyworded arguments
+            **kwargs can be thought of as a
+            double pointer to a dictionary: key/value
+        """
         if args:
             if len(args) >= 1:
                 self.id = args[0]
