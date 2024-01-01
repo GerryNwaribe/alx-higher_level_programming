@@ -3,7 +3,8 @@
 
 import json
 """import json"""
-
+import csv
+"""import csv"""
 
 class Base:
     """initializing class base"""
@@ -104,5 +105,29 @@ class Base:
                 json_string = file.read()
                 list_dicts = cls.from_json_string(json_string)
                 return [cls.create(**d) for d in list_dicts]
+        except FileNotFoundError:
+            return []
+    
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize instances from a CSV file.
+
+        Returns:
+            list: List of instances.
+        """
+        class_name = cls.__name__
+        filename = f"{class_name}.csv"
+
+        try:
+            with open(filename, 'r') as file:
+                csv_reader = csv.reader(file)
+                instances = []
+                for row in csv_reader:
+                    if class_name == 'Rectangle':
+                        instances.append(cls.create(id=int(row[0]), width=int(row[1]), height=int(row[2]),
+                                                    x=int(row[3]), y=int(row[4])))
+                    elif class_name == 'Square':
+                        instances.append(cls.create(id=int(row[0]), size=int(row[1]), x=int(row[2]), y=int(row[3])))
+                return instances
         except FileNotFoundError:
             return []
