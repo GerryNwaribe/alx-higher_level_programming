@@ -1,12 +1,12 @@
 #!/usr/bin/node
 // Write a script that prints x times “C is fun”
-if (process.argv.length < 3 || isNaN(Number(process.argv[2]))) {
-  console.log('Missing number of occurrences');
-} else {
-  let times = Number(process.argv[2]);
-  const message = 'C is fun';
+const arg1 = process.argv[2];
+const x = parseInt(arg1);
 
-  while (times--) {
-    console.log(message);
+if (isNaN(x) || x < 0) {
+  // Do nothing for negative numbers
+} else {
+  for (let i = 0; i < x; i++) {
+    console.log('C is fun');
   }
 }
