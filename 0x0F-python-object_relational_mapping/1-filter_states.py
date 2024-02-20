@@ -13,7 +13,8 @@ if __name__ == "__main__":
                          passwd=password, db=database_name)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'" 
+                   "ORDER BY states.id ASC")
     states = cursor.fetchall()
 
     seen_states = set()
