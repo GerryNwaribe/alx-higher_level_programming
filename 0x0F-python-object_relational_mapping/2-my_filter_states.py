@@ -18,8 +18,7 @@ if __name__ == "__main__":
                    "ORDER BY states.id ASC".format(state_name_searched))
     states = cursor.fetchall()
 
-    
     for state in states:
-            print(state)
+        print(state)
 
     db.close()
