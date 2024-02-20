@@ -13,8 +13,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     """Use format to create the SQL query with the user input"""
-    cursor.execute("SELECT * FROM states"
-                   "WHERE name = %s ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE %s")
     states = cursor.fetchall()
 
     for state in states:
