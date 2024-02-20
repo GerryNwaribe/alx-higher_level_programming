@@ -14,9 +14,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     """Use format to create the SQL query with the user input"""
-    query = "SELECT * FROM states "
-    "WHERE name = '{}' ORDER BY states.id ASC".format(state_name_searched)
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' "
+                   "ORDER BY id ASC".format(state_name_searched))
     states = cursor.fetchall()
 
     for state in states:
