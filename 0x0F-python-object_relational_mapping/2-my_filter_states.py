@@ -18,10 +18,8 @@ if __name__ == "__main__":
                    "ORDER BY states.id ASC".format(state_name_searched))
     states = cursor.fetchall()
 
-    if len(states) == 0:
-        print("No records found.")
-    else:
-        for state in states:
+    
+    for state in states:
             print(state)
 
     db.close()
