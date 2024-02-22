@@ -7,7 +7,7 @@ import sys
     all cities of that state, using the database hbtn_0e_4_usa"""
 if __name__ == "__main__":
     """Connect to the MySQL database and list all states."""
-    username, password, database_name, state_name_searched = sys.argv[1:4]
+    username, password, database_name, state_name_searched = sys.argv[1:5]
 
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          passwd=password, db=database_name)
