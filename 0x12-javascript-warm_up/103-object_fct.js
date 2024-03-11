@@ -10,6 +10,7 @@ function incr () {
   this.value++;
 }
 myObject.incr = incr;
+
 myObject.incr();
 console.log(myObject);
 myObject.incr();
