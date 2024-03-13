@@ -23,9 +23,9 @@ fs.readFile(fileA, 'utf8', (err, dataA) => {
       process.exit(1);
     }
 
-    const concatenatedData = dataA.trim() + '\n' + dataB.trim() + '\n';
+    const concatenatedFile = dataA + dataB;
 
-    fs.writeFile(fileC, concatenatedData, 'utf8', (err) => {
+    fs.writeFile(fileC, concatenatedFile, 'utf8', (err) => {
       if (err) {
         console.error(err);
         process.exit(1);
