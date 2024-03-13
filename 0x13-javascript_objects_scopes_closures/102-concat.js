@@ -2,6 +2,10 @@
 // Write a script that concats 2 files.
 
 const fs = require('fs');
+if (process.argv.length !== 5) {
+  console.log('Usage: ./concat_files.js source_file1 source_file2 destination_file');
+  process.exit(1);
+}
 
 const fileA = process.argv[2];
 const fileB = process.argv[3];
