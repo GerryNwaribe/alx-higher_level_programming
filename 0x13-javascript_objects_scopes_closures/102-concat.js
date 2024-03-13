@@ -14,13 +14,13 @@ const fileC = process.argv[4];
 fs.readFile(fileA, 'utf8', (err, dataA) => {
   if (err) {
     console.error(err);
-    return;
+    process.exit(1);
   }
 
   fs.readFile(fileB, 'utf8', (err, dataB) => {
     if (err) {
       console.error(err);
-      return;
+      process.exit(1);
     }
 
     const concatenatedData = dataA.trim() + '\n' + dataB.trim() + '\n';
@@ -28,6 +28,7 @@ fs.readFile(fileA, 'utf8', (err, dataA) => {
     fs.writeFile(fileC, concatenatedData, 'utf8', (err) => {
       if (err) {
         console.error(err);
+        process.exit(1);
       }
     });
   });
