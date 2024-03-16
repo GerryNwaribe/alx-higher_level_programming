@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that lists all State 
+"""script that lists all State
 objects from the database hbtn_0e_6_usa"""
 import sys
 from sqlalchemy import create_engine
@@ -9,7 +9,8 @@ from model_state import Base, State
 if __name__ == "__main__":
     # Database connection parameters
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-    db_connection = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, db_name)
+    db_connection = ('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                     .format(username, password, db_name))
 
     # Create engine and bind it to the Base class
     engine = create_engine(db_connection)
@@ -26,4 +27,3 @@ if __name__ == "__main__":
 
     # Close the session
     session.close()
-    
