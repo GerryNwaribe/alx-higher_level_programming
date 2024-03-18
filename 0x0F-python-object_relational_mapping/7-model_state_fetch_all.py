@@ -7,8 +7,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-"""script that lists all State
-objects from the database hbtn_0e_6_usa"""
 if __name__ == "__main__":
     """Database connection parameters"""
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
@@ -17,7 +15,6 @@ if __name__ == "__main__":
 
     """Create engine and bind it to the Base class"""
     engine = create_engine(db_connection)
-    Base.metadata.create_all(engine)
 
     """Create a session to interact with the database"""
     Session = sessionmaker(bind=engine)
