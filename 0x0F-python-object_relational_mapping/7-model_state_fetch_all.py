@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-script that lists all State objects
-from the database hbtn_0e_6_usa
-"""
+"""Import sys and create_engine.
+Import sessionmaker and Base and State"""
 
 import sys
 from sqlalchemy import create_engine
@@ -10,33 +8,23 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
-    # Check if the correct number of arguments is provided
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database>")
-        sys.exit(1)
+    """Database connection parameters"""
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+    db_connection = ('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                     .format(username, password, db_name))
 
-    # Extract MySQL connection information from command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    """Create engine and bind it to the Base class"""
+    engine = create_engine(db_connection)
 
-    # Create engine to connect to MySQL server
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(username, password, database))
-    # Base.metadata.create_all(engine)
 
-    # Create session maker
+    """Create a session to interact with the database"""
     Session = sessionmaker(bind=engine)
-
-    # Create session
     session = Session()
 
-    # Query and list all State objects
+    """Query all State objects and print them"""
     states = session.query(State).order_by(State.id).all()
-
-    # Display the results with specific formatting
     for state in states:
-        print(state.id, state.name, sep=": ")
+        print("{}: {}".format(state.id, state.name))
 
-    # Close session
+    """Close the session"""
     session.close()
