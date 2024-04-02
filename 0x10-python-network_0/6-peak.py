@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""define fubction"""
 def find_peak(list_of_integers):
     """
     Finds a peak in a list of unsorted integers.
@@ -25,12 +26,12 @@ def find_peak(list_of_integers):
     if (mid == 1):
         return (_md if _md > _previous else  _previous)
 
-    # Check if the middle element is a peak
+    """Check if the middle element is a peak"""
     _next = list_of_integers[mid + 1]
     if (mid == 0 or _md >= _previous) and (mid == n - 1 or _md >= _next):
         return _md
 
-    # If the middle element is not a peak, recursively search in the left and right halves
+    """If the middle element is not a peak, recursively search in the left and right halves"""
     if mid > 0 and _previous > _md:
         return find_peak(list_of_integers[:mid])
     else:
