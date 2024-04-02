@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-"""define fubction"""
+"""Define function"""
+
+
 def find_peak(list_of_integers):
     """
-    Finds a peak in a list of unsorted integers.
+    Finds a peak in a list of unsorted integers using a binary search algorithm.
 
     Args:
         list_of_integers (list): List of unsorted integers.
 
     Returns:
-        int: Peak value found in the list.
-
+        int: The peak value found in the list. If there are multiple peaks, any peak value can be returned.
+             If the list is empty, returns None.
     """
     n = len(list_of_integers)
 
@@ -19,21 +21,14 @@ def find_peak(list_of_integers):
     if n == 1:
         return list_of_integers[0]
 
-    mid = n // 2
-    _md = list_of_integers[mid]
-    _previous = list_of_integers[mid - 1]
+    left = 0
+    right = n - 1
 
-    if (mid == 1):
-        return (_md if _md > _previous else  _previous)
+    while left < right:
+        mid = left + (right - left) // 2
+        if list_of_integers[mid] > list_of_integers[mid + 1]:
+            right = mid
+        else:
+            left = mid + 1
 
-    """Check if the middle element is a peak"""
-    _next = list_of_integers[mid + 1]
-    if (mid == 0 or _md >= _previous) and (mid == n - 1 or _md >= _next):
-        return _md
-
-    """If the middle element is not a peak, recursively search in the left and right halves"""
-    if mid > 0 and _previous > _md:
-        return find_peak(list_of_integers[:mid])
-    else:
-        return find_peak(list_of_integers[mid + 1:])
-    
+    return list_of_integers[left]
