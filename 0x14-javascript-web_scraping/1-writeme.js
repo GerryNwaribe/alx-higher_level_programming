@@ -10,9 +10,7 @@ function writeFileContent (filePath, string) {
   // Handle any errors that occur during the reading process
     if (err) {
       console.error(err);
-      return;
     }
-    console.log(string);
   });
 }
 
